@@ -31,6 +31,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'hirb', '~> 0.7.3'
+gem 'devise', '~> 4.5'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'

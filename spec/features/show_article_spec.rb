@@ -31,4 +31,18 @@ RSpec.feature "Showing Articles" do
     expect(page).not_to have_link("Edit Article") 
     expect(page).not_to have_link("Delete Article")
   end
+
+  scenario "to non-owner hide the Edit and Delete buttons" do
+    login_as(@john, scope: :user)
+    visit "/"
+    click_link @article.title 
+    
+    expect(page).to have_content(@article.title)
+    expect(page).to have_content(@article.body)  
+    expect(current_path).to eq(article_path(@article)) 
+
+    expect(page).to have_link("Edit Article") 
+    expect(page).to have_link("Delete Article")
+  end
+
 end

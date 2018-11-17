@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
     if @comment.save
       flash[:notice] = "Comment has been created"
     else
-      flash.now[:alert] = "Comment has not beencreated"
+      flash.now[:alert] = "Comment has not been created"
     end
     redirect_to article_path(@article)
   end
@@ -22,7 +22,7 @@ class CommentsController < ApplicationController
   end
   
   def set_article
-    @article = Article.find(params[:articleid])
+    @article = Article.find(params[:article_id])
     
   end
  
